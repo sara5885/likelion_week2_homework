@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          body{
+            background-color: #fff0b3;
+        }
+        a{
+            text-decoration: none;
+            color:black;
+        }
+        audio{
+            width:50px;
+            height:10px
+        }
+    </style>
+
+   
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">Hello, s00jin world!</a></h1>
+    </header>
+    <span id="introduce">
+        <h2>군백기를 마치고 돌아온 "하이라이트"의 컴백! <audio src="loveday.mp3" autoplay controls loop></audio></h2>
+       
+        <img src="highlight.jpg" onclick="change(this)" alt="" height="500" width="750" style="display: block; margin: 0px auto;">
+        <p style="text-align:center;">사진을 클릭해보세요!</p> 
+
+        <h2 id="clock" style="text-align: center;"></h2>
+    </span>
+    <script>
+        var comeBack=new Date(2021,5,3,18,0,0,0);
+        function timer(){
+            var now=new Date();
+            var sec=Math.floor((comeBack-now)/1000);
+            var min=Math.floor(sec/60);
+            var hr=Math.floor(min/60);
+            var day=Math.floor(hr/24);
+
+            hr=hr-(day*24);
+            min=min-(day*24*60)-(hr*60);
+            sec=sec-(day*24*60*60)-(hr*60*60)-(min*60);
+            
+            var result="컴백까지 "+hr+"시간 "+min+"분 "+sec+"초 남았습니다!";
+            document.getElementById('clock').innerHTML=result;
+            setTimeout(timer,1000);
+        }
+        timer();
+
+        var files=["highlight.jpg",
+        "highlight1.jpg",
+        "highlight2.jpg",
+       
+        ];
+        var imgs=new Array();
+        for(var i=0;i<files.length;i++){
+            imgs[i]=new Image();
+            imgs[i].src=files[i];
+        }
+        var next=1;
+        function change(img){
+            img.src=imgs[next].src;
+            next++;
+            next%=imgs.length;
+        }
+    </script>
+</body>
+</html>
