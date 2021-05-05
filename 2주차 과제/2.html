@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          body{
+            background-color: #fff0b3;
+        }
+        a{
+            text-decoration: none;
+            color:black;
+        }
+        .center{
+            height:50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .center #nuri{
+            text-align: center;
+            display: inline-block;
+        }
+       
+    </style>
+     <script>
+        var files=["nuri1.jpg",
+        "nuri2.jpg",
+        "nuri3.jpg",
+        "nuri4.jpg",
+        "nuri5.jpg",
+        "nuri6.jpg",
+        "nuri7.jpg",
+        "nuri8.jpg",
+        "nuri9.jpg"
+        ];
+        var imgs=new Array();
+        for(var i=0;i<files.length;i++){
+            imgs[i]=new Image();
+            imgs[i].src=files[i];
+        }
+        var next=1;
+        function change(img){
+            img.src=imgs[next].src;
+            next++;
+            next%=imgs.length;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">Hello, s00jin world!</a></h1>
+    </header>
+    <div class="center">
+    <span id="nuri">
+        <h2>*누리* 모음집</h2>
+        사진을 클릭하면 다음 사진으로 넘어갑니다. <br>
+        <img src="nuri1.jpg" alt="" width="300" height="300" onclick="change(this)">
+    </span>
+    </div>
+   
+</body>
+</html>

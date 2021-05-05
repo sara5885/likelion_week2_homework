@@ -1,0 +1,64 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+/*이 아래에 코드를 작성하시면 됩니다!*/
+
+header{
+    background-color: black;
+    color:white;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    top:0;
+    width: 100%;
+    left: 0;
+    right: 0
+}
+
+nav> ul{
+    background-color: green;
+    list-style: none;
+    overflow: auto;
+   
+}
+nav>ul>li{
+    float:right;
+}
+
+li{
+    margin: 10px;
+}
+
+
+section>form{
+    overflow:auto;
+    display:block;
+    background-color: beige;
+    height:400px;
+    padding: 20px;
+}
+
+article>section:nth-child(2){
+    display: block;
+    background-color: yellow;
+    height:400px;
+}
+input{
+    display:block;
+    height:35px;
+}
+a{
+    text-decoration: none;
+    color:white;
+}
+section{
+    display:block;
+}
+footer{
+    display: block;
+    background-color:green;
+    height: 100px;
+}
